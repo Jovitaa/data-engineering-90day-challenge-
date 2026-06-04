@@ -1,7 +1,7 @@
 # Day 1 – Netflix Data Engineering Challenge
 
 ## 📌 Overview
-This repository documents my **90‑day Data Engineering Challenge**.  
+  
 On **Day 1**, I focused on building the foundation of a data engineering pipeline:
 - Environment setup with Jupyter Notebook and PostgreSQL.
 - Exploring the Netflix dataset using pandas.
@@ -30,5 +30,27 @@ jupyter notebook
 - **jupyter notebook** → launches the notebook server in the current folder
   
 ---
+---
+
+## ♦ Step 2: Data Exploration
+**Tools used**: pandas
+```import pandas as pd
+df = pd.read_csv("C:/Users/jovit/Desktop/Netflix_Project/netflix_titles.csv")
+
+df.info()
+print(df.columns.tolist())
+```
+### Explanation
+- **pd.read_csv()** → loads CSV into a DataFrame  
+- **df.info()** → shows column names, data types, and counts  
+- **df.columns.tolist()** → lists all column names  
 
 ---
+---
+
+
+
+
+
+
+
