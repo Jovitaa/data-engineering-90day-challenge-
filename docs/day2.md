@@ -93,10 +93,10 @@ ratings = [3, 5, 2, 4, 1]
 print("Target found at index:", linear_search(ratings, 4))
 ```
 ## Explanation
--**Start at index 0.**
--**Compare each element with the target.**
--**If found, return the index.**
--**If not found, return -1.**
+-Start at index 0.
+-Compare each element with the target.
+-If found, return the index.
+-If not found, return -1.
 
 ---
 
