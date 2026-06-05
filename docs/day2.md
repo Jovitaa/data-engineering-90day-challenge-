@@ -35,8 +35,8 @@ conn = psycopg2.connect(
 )
 ```
 ## Explanation
-**connect()** → establishes DB connection
-**pandas** → used later to fetch query results into DataFrames
+-**connect()** → establishes DB connection
+-**pandas** → used later to fetch query results into DataFrames
 
 ---
 ## ♦ Step 2: SQL Joins
@@ -56,7 +56,8 @@ SELECT u.user_id, u.name, r.movie_id, r.rating
 FROM users u
 LEFT JOIN ratings r ON u.user_id = r.user_id;
 ```
-## Explanation: Returns all users, even if they don’t have ratings.
+## Explanation: 
+-**Returns all users, even if they don’t have ratings.**
 
 **RIGHT JOIN**
 ```sql
@@ -64,7 +65,8 @@ SELECT u.user_id, u.name, r.movie_id, r.rating
 FROM users u
 RIGHT JOIN ratings r ON u.user_id = r.user_id;
 ```
-## Explanation: Returns all ratings, even if they don’t match a user.
+## Explanation: 
+-**Returns all ratings, even if they don’t match a user.**
 
 **FULL JOIN**
 ```sql
@@ -72,7 +74,8 @@ SELECT u.user_id, u.name, r.movie_id, r.rating
 FROM users u
 FULL JOIN ratings r ON u.user_id = r.user_id;
 ```
-## Explanation: Returns all users and all ratings, matching where possible.
+## Explanation: 
+-**Returns all users and all ratings, matching where possible.**
 
 ---
 
@@ -90,10 +93,10 @@ ratings = [3, 5, 2, 4, 1]
 print("Target found at index:", linear_search(ratings, 4))
 ```
 ## Explanation
-**Start at index 0.**
-**Compare each element with the target.**
-**If found, return the index.**
-**If not found, return -1.**
+-**Start at index 0.**
+-**Compare each element with the target.**
+-**If found, return the index.**
+-**If not found, return -1.**
 
 ---
 
@@ -117,11 +120,11 @@ ratings = sorted([3, 5, 2, 4, 1])
 print("Target found at index:", binary_search(ratings, 4))
 ```
 ## Explanation
-**Sort the list first.**
-**Check the middle element.**
-**If target is smaller, search left side.**
-**If target is larger, search right side.**
-**Repeat until found or exhausted.**
+-**Sort the list first.**
+-**Check the middle element.**
+-**If target is smaller, search left side.**
+-**If target is larger, search right side.**
+-**Repeat until found or exhausted.**
 
 ---
 
