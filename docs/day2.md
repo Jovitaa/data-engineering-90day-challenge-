@@ -161,12 +161,6 @@ df_join
 
 ---
 
-### FileNotFoundError for SQL file
-- **Error:** Missing SQL file in working directory  
-- ✅ **Fix:** Verified path with `os.getcwd()` and used full file path.  
-
----
-
 ### Indentation issue in linear search
 - **Error:** Returned `-1` even when target existed.  
 - ✅ **Fix:** Ensured `return -1` was outside the loop.  
