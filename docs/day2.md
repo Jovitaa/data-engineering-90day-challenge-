@@ -132,27 +132,6 @@ Binary Search: Fast (O(log n)), but requires sorted data.
 
 ---
 
-## ♦ Step 6: Integration with PostgreSQL
-Tools used: psycopg2, pandas
-
-**Query Ratings Table**
-```python
-df_ratings = pd.read_sql("SELECT * FROM ratings LIMIT 10;", conn)
-df_ratings
-Join Movies with Ratings
-python
-query = """
-SELECT m.movie_id, m.title, r.user_id, r.rating
-FROM movies m
-INNER JOIN ratings r ON m.movie_id = r.movie_id
-LIMIT 10;
-"""
-df_join = pd.read_sql(query, conn)
-df_join
-```
-
----
-
 ## 🔹 What Went Wrong (and How You Fixed It)
 
 ### DuplicateTable error
