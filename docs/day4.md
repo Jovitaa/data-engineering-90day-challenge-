@@ -68,6 +68,8 @@ SELECT *
 FROM avg_release;
 ```
 ## Explanation
--The CTE calculates the average release year for each content type.
--The result is stored temporarily in avg_release.
--The main query retrieves the calculated values.
+
+- The **CTE** calculates the average release year for each content type (Movie, TV Show).  
+- The result is stored temporarily in the CTE named `avg_release`.  
+- The main query then retrieves and displays the calculated values from this temporary dataset.  
+
