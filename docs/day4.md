@@ -74,7 +74,7 @@ FROM avg_release;
 - The main query then retrieves and displays the calculated values from this temporary dataset.  
 
 ## Example 2: Multiple CTEs
-# Problem  
-# Count total Movies and TV Shows separately.
+### Problem  
+### Count total Movies and TV Shows separately.
 
 ### Query
