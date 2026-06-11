@@ -51,3 +51,23 @@ WITH cte_name AS (
 )
 SELECT *
 FROM cte_name;
+```
+
+## Example 1: Average Release Year by Content Type
+### Query
+
+```sql
+WITH avg_release AS (
+    SELECT
+        ROUND(AVG(release_year),0) AS avg_releaseyr,
+        show_type
+    FROM netflix
+    GROUP BY show_type
+)
+SELECT *
+FROM avg_release;
+```
+## Explanation
+-The CTE calculates the average release year for each content type.
+-The result is stored temporarily in avg_release.
+-The main query retrieves the calculated values.
