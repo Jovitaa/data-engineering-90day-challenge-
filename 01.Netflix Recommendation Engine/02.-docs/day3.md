@@ -83,7 +83,7 @@ SELECT
     title,
     show_type,
     release_year,
-    RANK() OVER(
+    PERCENT_RANK() OVER(
         PARTITION BY show_type
         ORDER BY release_year DESC
     ) AS release_rank
