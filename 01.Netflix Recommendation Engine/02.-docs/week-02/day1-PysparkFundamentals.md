@@ -14,10 +14,6 @@ The focus is on setting up the development environment and ensuring all required
 - Schema Interface
 - CSV Integration
 
-## 01. Overview
-Day 1 marks the start of the **Netflix User Activity ETL Pipeline** project.  
-The focus is on setting up the development environment and ensuring all required tools are installed and configured correctly.  
-
 **Objective:**  
 - Install and configure Python, PySpark, Java/JVM  
 - Set environment variables (`JAVA_HOME`, `PATH`)  
