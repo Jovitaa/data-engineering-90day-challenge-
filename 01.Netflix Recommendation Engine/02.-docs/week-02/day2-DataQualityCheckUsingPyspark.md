@@ -301,16 +301,16 @@ clean_content_df = pyspark.read.option("header", True).option("inferSchema", Tru
   df.groupBy("id").count().filter(col("count") > 1)
   ```
 
-**Q6. Handle NULLs**   
+- **Q6. Handle NULLs**   
 Options: drop rows, replace defaults, impute, quarantine.
 Example:
 ```python
 fillna({"country":"Unknown"})
  ```
-## Q7. Handle Negative `watch_minutes`
+-  **Q7. Handle Negative `watch_minutes`** 
 Violates business rules → remove, flag, or send to exception tables.
 
-## Q8. Data Profiling
+- **Q8. Data Profiling** 
 Analyze before transformation:
 - Row counts  
 - Data types  
@@ -318,7 +318,7 @@ Analyze before transformation:
 - Duplicates  
 - Distributions
 
-  ## Q9. What are Bronze, Silver, and Gold Layers?
+  - **Q9. What are Bronze, Silver, and Gold Layers?** 
 
 - **Bronze Layer:**  
   Raw ingested data from source systems.  
