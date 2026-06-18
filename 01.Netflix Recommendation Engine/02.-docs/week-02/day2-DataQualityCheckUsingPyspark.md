@@ -302,32 +302,32 @@ clean_content_df = pyspark.read.option("header", True).option("inferSchema", Tru
   ```
 
 - **Q6. Handle NULLs**   
-Options: drop rows, replace defaults, impute, quarantine.
-Example:
-```python
-fillna({"country":"Unknown"})
- ```
--  **Q7. Handle Negative `watch_minutes`** 
-Violates business rules → remove, flag, or send to exception tables.
-
+  Options: drop rows, replace defaults, impute, quarantine.
+  Example:
+  ```python
+  fillna({"country":"Unknown"})
+  ```
+  - **Q7. Handle Negative `watch_minutes`** 
+     Violates business rules → remove, flag, or send to exception tables.
+ 
 - **Q8. Data Profiling** 
-Analyze before transformation:
-- Row counts  
-- Data types  
-- Null %  
-- Duplicates  
-- Distributions
+   Analyze before transformation:
+   - Row counts  
+   - Data types  
+   - Null %  
+   - Duplicates  
+   - Distributions
 
   - **Q9. What are Bronze, Silver, and Gold Layers?** 
 
-- **Bronze Layer:**  
-  Raw ingested data from source systems.  
+    - **Bronze Layer:**  
+        Raw ingested data from source systems.  
 
-- **Silver Layer:**  
-  Cleaned, validated, and standardized datasets.  
+     - **Silver Layer:**  
+        Cleaned, validated, and standardized datasets.  
 
-- **Gold Layer:**  
-  Business-ready datasets used for reporting, dashboards, and analytics.  
+     - **Gold Layer:**  
+        Business-ready datasets used for reporting, dashboards, and analytics.  
 
 ---
 
