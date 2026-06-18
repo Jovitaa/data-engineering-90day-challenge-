@@ -307,7 +307,7 @@ clean_content_df = pyspark.read.option("header", True).option("inferSchema", Tru
   ```python
   fillna({"country":"Unknown"})
   ```
-  - **Q7. Handle Negative `watch_minutes`** 
+ - **Q7. Handle Negative `watch_minutes`** 
      Violates business rules → remove, flag, or send to exception tables.
  
 - **Q8. Data Profiling** 
