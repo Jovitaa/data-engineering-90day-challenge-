@@ -6,7 +6,7 @@ This week focuses on building a **production-style ETL pipeline** using PySpark 
 You’ll move beyond syntax practice into **real-world project execution**: ingesting data, validating quality, transforming records, orchestrating pipelines, and optimizing performance.
 
 ---
-## 01. Overview of Day 1 -PySpark Fundamentals
+## 01. Day 1 Overview -PySpark Fundamentals
 Day 1 marks the start of the **Netflix User Activity ETL Pipeline** project.  
 The focus is on setting up the development environment and ensuring all required tools are installed and configured correctly. 
 - Spark Session
@@ -43,11 +43,11 @@ The focus is on setting up the development environment and ensuring all required
 | pip               | Install and manage Python packages           |
 
 ----
-# Tools Used and Why We Use Them
+## Tools Used and Why We Use Them
 
 ---
 
-## 1. Python
+### 1. Python
 **Why are we using Python?**  
 Python is the primary programming language for Data Engineering because it provides:
 - Easy data manipulation  
@@ -65,7 +65,7 @@ Extensively used in Microsoft, Amazon, Netflix, Uber, Airbnb.
 
 ---
 
-## 2. PySpark
+### 2. PySpark
 **Why are we using PySpark?**  
 Real-world product companies process millions or billions of records. PySpark enables:
 - Distributed processing  
@@ -94,7 +94,7 @@ df.groupBy("country").count()
 | Good for analysis| Good for ETL pipelines   |
 
 ---
-## 3. Java (JVM)
+### 3. Java (JVM)
 
 **Why are we using Java?**  
 Apache Spark is built in Scala and runs on the JVM. PySpark is only a Python wrapper.  
@@ -105,7 +105,7 @@ Apache Spark is built in Scala and runs on the JVM. PySpark is only a Python wra
 `JAVA_HOME is not set`
 
 ---
-## 4. SparkSession
+### 4. SparkSession
 
 **Why are we using SparkSession?**  
 SparkSession is the entry point to Spark. Without it, Spark cannot:  
@@ -113,7 +113,7 @@ SparkSession is the entry point to Spark. Without it, Spark cannot:
 - Create DataFrames  
 - Execute transformations
   
- ### Example 
+ **Example** 
 ```python
 from pyspark.sql import SparkSession
 
@@ -121,13 +121,13 @@ spark = SparkSession.builder \
     .appName("NetflixETL") \
     .getOrCreate()
 ```
-### In This Project
+**In This Project**
 
 - Creates the Spark application  
 - Manages resources  
 - Connects Python to the Spark Engine
 ---
-## 5. VS Code
+### 5. VS Code
 
 **Why are we using VS Code?**  
 Provides:  
@@ -146,7 +146,7 @@ VS Code combines **Code + Notebooks + GitHub + Terminal** in one application.
 
 ---
 
-## 6. Jupyter Notebook (.ipynb)
+### 6. Jupyter Notebook (.ipynb)
 
 **Why are we using Notebooks?**  
 Allows iterative development. Data Engineers use notebooks for:  
@@ -160,7 +160,7 @@ Allows iterative development. Data Engineers use notebooks for:
 - Validate ETL logic  
 
 ----
-## 7. pip
+### 7. pip
 
 **Why are we using pip?**  
 pip is Python's package manager.
