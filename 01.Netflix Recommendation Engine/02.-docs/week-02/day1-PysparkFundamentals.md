@@ -83,11 +83,18 @@ df.groupBy("country").count()
 
 ## Why Not Pandas?
 
-| Pandas           | PySpark                  |
-|------------------|--------------------------|
-| Single machine   | Distributed              |
-| Memory limited   | Handles large datasets   |
-| Good for analysis| Good for ETL pipelines   |
+## Key Differences
+
+| Feature         | Pandas                  | PySpark                          |
+|-----------------|-------------------------|----------------------------------|
+| Processing      | Single Machine          | Distributed Processing           |
+| Data Size       | Small to Medium         | Large to Massive                 |
+| Memory Usage    | Entire dataset in RAM   | Distributed across nodes         |
+| Performance     | Faster for small data   | Better for big data workloads    |
+| Scalability     | Limited                 | Highly scalable                  |
+| Execution       | Local machine           | Cluster environment              |
+| Use Case        | Data Analysis           | ETL Pipelines & Big Data         |
+| Data Structure  | Pandas DataFrame        | Spark DataFrame                  |
 
 ---
 ### 3. Java (JVM)
@@ -204,7 +211,7 @@ python -m pip show pyspark
 ```
 **Output:** pyspark 4.1.2
 
-#### Step 2: Create SparkSession
+#### Step 3: Create SparkSession
 ```python
 from pyspark.sql import SparkSession
 
@@ -215,11 +222,123 @@ print(spark.version)   # Verify Spark version
 ```
 **Explanation:** Spark point is the entry point to spark session. 
 
-#### Step 3: 
+#### Step 4:  Generate Users Dataset with Pandas  
+```python
+import pandas as pd
+import random
+
+# Define countries and subscription types
+countries = ["India","USA","UK","Canada","Australia","Germany","France"]
+subscription_types = ["Basic","Standard","Premium"]
+
+# Generate 500 users with random country and subscription plan
+users = []
+for user_id in range(1, 501):
+    users.append([
+        user_id,
+        f"User_{user_id}",
+        random.choice(countries),
+        random.choice(subscription_types)
+    ])
+
+# Convert list to Pandas DataFrame
+users_df = pd.DataFrame(users, columns=["user_id","user_name","country","subscription_type"])
+
+# Export to CSV
+users_df.to_csv("C:/Users/jovit/Desktop/Netflix_Project/users.csv", index=False)
+
+# Display first 5 records
+print(users_df.head())  
+```
+
+#### Step 5: Generate User Activity Dataset
+```python
+import pandas as pd
+import random
+
+# Load Netflix titles dataset
+netflix = pd.read_csv("C:/Users/jovit/Desktop/Netflix_Project/netflix_titles_clean.csv")
+
+# Extract show IDs
+show_ids = netflix["show_id"].tolist()
+
+# Generate 5000 activity records
+activities = []
+for i in range(1, 5001):
+    activities.append([
+        i,
+        random.randint(1, 500),       # Random user ID
+        random.choice(show_ids),      # Random show ID
+        random.randint(10, 300)       # Random watch time
+    ])
+
+# Convert to DataFrame
+activity_df = pd.DataFrame(activities, columns=["activity_id","user_id","show_id","watch_minutes"])
+
+# Export to CSV
+activity_df.to_csv("C:/Users/jovit/Desktop/Netflix_Project/user_activity.csv", index=False) 
+```
+#### Step 6: Read Netflix Titles into PySpark DataFrame
+```python
+content_df = spark.read.csv(
+    "C:/Users/jovit/Desktop/Netflix_Project/netflix_titles_clean.csv",
+    header=True,
+    inferSchema=True
+)
+
+# Inspect schema and sample records
+content_df.printSchema()
+content_df.show(5)
+
+# Count rows and columns
+content_df.count()
+len(content_df.columns)
+```
+#### Step 7: Read Users and Activity into PySpark DataFrames
+```python
+users_df = spark.read.csv(
+    "C:/Users/jovit/Desktop/Netflix_Project/users.csv",
+    header=True,
+    inferSchema=True
+)
+
+activity_df = spark.read.csv(
+    "C:/Users/jovit/Desktop/Netflix_Project/user_activity.csv",
+    header=True,
+    inferSchema=True
+)
+
+# Inspect sample records
+users_df.show()
+activity_df.show()
+
+# Inspect schema
+users_df.printSchema()
+activity_df.printSchema()
+```
+
+---
+
+## 04. Interview Focus QnAs
 
 
-##### Step 4: 
+**Q1: What is the difference between Pandas and PySpark?**  
+**A:** Pandas is a Python library for in-memory data analysis on a single machine and is suitable for small to medium datasets.  
+PySpark is the Python API for Apache Spark and is designed for distributed processing of large datasets across multiple machines.  
+Pandas is commonly used for analysis, while PySpark is widely used in Data Engineering for ETL pipelines and big data processing.
 
-#### Step 5: 
+---
+**Q2: Why did you use Pandas to create users.csv instead of PySpark?**
+**A:** We used Pandas because the objective was to generate small sample datasets for testing. Pandas is lightweight and efficient for creating a few hundred or thousand records. PySpark is designed for distributed processing of large datasets and would introduce unnecessary overhead for simple data generation. Once the datasets were created, PySpark was used for the actual ETL processing and transformations.
 
-#### Step 6: 
+---
+**Q3: Why do we use index=False in to_csv()?**
+**A:** Pandas automatically maintains a row index. By default, to_csv() exports this index as an additional column. Using index=False prevents the index from being written to the file, ensuring that only actual business data columns are stored in the CSV. This avoids unnecessary columns during downstream ETL processing.
+
+---
+**Q4: When would you use a Jupyter Notebook instead of a Python script?**
+**A:** Jupyter Notebooks are useful for exploration, analysis, debugging, and prototyping because they allow code to be executed interactively. Python scripts are preferred for production ETL pipelines, automation, scheduling, and deployment because they are easier to maintain, version control, and integrate with orchestration tools such as Azure Data Factory and Databricks.
+
+---
+**Q5: What is an .ipynb file?**
+**A:** An .ipynb file is the notebook file format used by Jupyter. It stores code cells, markdown, outputs, and execution metadata. Although it originated with Jupyter, it can be opened and edited in tools such as VS Code, Google Colab, Azure ML, and JupyterLab.
