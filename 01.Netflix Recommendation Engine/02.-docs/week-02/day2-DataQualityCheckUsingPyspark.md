@@ -308,7 +308,7 @@ clean_content_df = pyspark.read.option("header", True).option("inferSchema", Tru
   fillna({"country":"Unknown"})
   ```
  - **Q7. Handle Negative `watch_minutes`** 
-     Violates business rules → remove, flag, or send to exception tables.
+     -  Violates business rules → remove, flag, or send to exception tables.
  
 - **Q8. Data Profiling** 
    Analyze before transformation:
@@ -318,15 +318,15 @@ clean_content_df = pyspark.read.option("header", True).option("inferSchema", Tru
    - Duplicates  
    - Distributions
 
-  - **Q9. What are Bronze, Silver, and Gold Layers?** 
+- **Q9. What are Bronze, Silver, and Gold Layers?** 
 
     - **Bronze Layer:**  
         Raw ingested data from source systems.  
 
-     - **Silver Layer:**  
+    - **Silver Layer:**  
         Cleaned, validated, and standardized datasets.  
 
-     - **Gold Layer:**  
+    - **Gold Layer:**  
         Business-ready datasets used for reporting, dashboards, and analytics.  
 
 ---
