@@ -172,32 +172,54 @@ Easy installation and management of dependencies.
 ---
 ## 03. Code Snippets & Demonstration
 
-# Step 1: Install PySpark
+### 3.1 Verification of Installed tools and libraries
+
+#### Step 1: Verify Python installation
+```python
+python --version
+```
+**Output:** Python 3.14.5
+
+#### Step 2: Verify Java installation
+```python
+java -version
+```
+#### Step 3: Configure Environment Variables
+**Example:**
+JAVA_HOME = C:\Program Files\Java\jdk-17
+PATH = %JAVA_HOME%\bin
+
+---
+### 3.2 Getting Started with Pyspark 
+
+#### Step 1: Install PySpark
 ```bash
 pip install pyspark
 ```
+**Explanation:** Pyspark is installed using pip, python's package manager.
 
-# Step 2: Create SparkSession
+#### Step 2: Verify PySpark installation
+```python
+python -m pip show pyspark
+```
+**Output:** pyspark 4.1.2
+
+#### Step 2: Create SparkSession
+```python
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder \
     .appName("NetflixETL") \
     .getOrCreate()
-
 print(spark.version)   # Verify Spark version
+```
+**Explanation:** Spark point is the entry point to spark session. 
 
-# Step 3: Verify Python installation
-python --version
-# Output: Python 3.14.5
+#### Step 3: 
 
-# Step 4: Verify PySpark installation
-python -m pip show pyspark
-# Output: pyspark 4.1.2
 
-# Step 5: Verify Java installation
-java -version
+##### Step 4: 
 
-# Step 6: Configure Environment Variables
-# Example:
-JAVA_HOME = C:\Program Files\Java\jdk-17
-PATH = %JAVA_HOME%\bin
+#### Step 5: 
+
+#### Step 6: 
