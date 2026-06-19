@@ -77,3 +77,82 @@ for folder in required_folders:
         print(f"FOUND: {folder}")
     else:
         print(f"MISSING: {folder}")
+```
+
+## Explanation
+
+- **BASE_PATH:** Defines root data directory.  
+- **required_folders:** Lists all required folders.  
+- **folder_path.exists():** Validates folder existence.  
+- **print(...):** Confirms setup success.  
+
+---
+
+## Architecture Mapping
+
+- **Traditional:** Raw → Processed → Curated  
+- **Medallion:** Bronze → Silver → Gold  
+
+**Mapping:**  
+- Raw = Bronze  
+- Processed = Silver  
+- Curated = Gold  
+
+---
+
+## 04. Product Company Style Interview Q&A
+
+**Q1. What is ADLS?**  
+ADLS is Microsoft’s scalable cloud storage for big data analytics, integrating with Databricks, ADF, Synapse, Power BI.
+
+**Q2. Difference between Raw, Processed, Curated?**  
+- Raw → unmodified source data  
+- Processed → cleaned & validated  
+- Curated → business-ready datasets  
+
+**Q3. Explain Bronze, Silver, Gold layers.**  
+- Bronze → raw data  
+- Silver → cleaned/transformed  
+- Gold → aggregated business datasets  
+
+**Q4. Why no transformations in Raw/Bronze?**  
+Raw/Bronze is the source of truth. Modifying risks data loss and complicates troubleshooting.
+
+**Q5. Data Lake vs Data Warehouse?**  
+- Data Lake → raw + semi-structured + structured, ML/analytics  
+- Data Warehouse → structured, optimized for BI/reporting  
+
+**Q6. What architecture does Databricks use?**  
+Medallion (Bronze → Silver → Gold)
+
+**Q7. Why is Medallion popular?**  
+It improves:  
+- Data quality  
+- Data lineage  
+- Scalability  
+- Governance  
+- Reusability  
+
+---
+
+## 05. Summary
+
+Day 3 focused on **enterprise Data Lake architectures**:
+
+- Traditional: Raw → Processed → Curated  
+- Medallion: Bronze → Silver → Gold  
+
+**Key Learnings:**  
+- ADLS fundamentals  
+- Data Lake organization patterns  
+- Data Lake vs Data Warehouse differences  
+- Folder hierarchy design  
+- Medallion concepts  
+- Enterprise storage practices  
+
+**Deliverables:**  
+- ✓ Traditional Architecture Folder Structure  
+- ✓ Medallion Architecture Folder Structure  
+- ✓ Validation Script  
+- ✓ Documentation  
+- ✓ Interview Prep Notes  
