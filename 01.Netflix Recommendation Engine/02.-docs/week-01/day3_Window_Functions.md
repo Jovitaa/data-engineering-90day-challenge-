@@ -1,7 +1,7 @@
 # Day 3 – Window Functions & Merge Sort
 
 ## 🎯 Objective
-Learn **SQL window functions** and understand how **sorting algorithms** work by implementing **Merge Sort in Python** using the Netflix dataset.
+Learn **SQL window functions** * using the Netflix dataset.
 
 ---
 
@@ -96,43 +96,10 @@ FROM netflix;
 - **DENSE_RANK()** → Ranking without gaps for ties.  
 - **PARTITION BY** → Groups rows so ranking restarts within each group.
 
-  ---
-
-  # Part 2: Merge Sort
-
-## ❓ What is Merge Sort?
-Merge Sort is a **Divide and Conquer** algorithm used for efficient sorting.
-
----
-
-## 🪜 Steps
-
-1. **Split the array into halves.**  
-2. **Continue splitting** until only one element remains in each sub-array.  
-3. **Merge sorted pieces back together** to form a fully sorted array.
-
----
-
-## 📊 Key Points
-- Works recursively by breaking down the problem.  
-- Guarantees **O(n log n)** time complexity.  
-- Stable sorting algorithm (preserves order of equal elements).  
-- Efficient for large datasets compared to simpler algorithms like Bubble Sort or Insertion Sort.
-
-  # 📊 Complexity Analysis
-
-- **Bubble Sort** → \(O(n^2)\)  
-- **Insertion Sort** → \(O(n^2)\)  
-- **Merge Sort** → \(O(n \log n)\)  
-
 ---
 
 # 📝 Key Takeaways
 
 - Learned the difference between **ROW_NUMBER()**, **RANK()**, and **DENSE_RANK()**.  
 - Understood how **PARTITION BY** creates separate ranking groups.  
-- Implemented **Merge Sort** using recursion.  
-- Learned that `merge_sort()` performs splitting and recursive sorting.  
-- Learned that `merge()` performs the actual combining of sorted arrays.  
-- Compared sorting algorithms and understood why **Merge Sort** is more efficient for larger datasets.  
 - Applied **SQL ranking concepts** and **Python sorting concepts** to the same Netflix dataset.
