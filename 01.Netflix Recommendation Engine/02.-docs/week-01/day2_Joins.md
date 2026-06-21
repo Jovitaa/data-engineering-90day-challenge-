@@ -4,9 +4,7 @@
 
 On **Day 2**, I focused on expanding the pipeline with:
 - Practicing SQL joins (INNER, LEFT, RIGHT, FULL).
-- Implementing searching algorithms (linear and binary).
 - Querying existing PostgreSQL tables (`movies`, `ratings`, `users`).
-- Demonstrating binary search on sorted ratings.
 
 ---
 
@@ -79,61 +77,6 @@ FULL JOIN ratings r ON u.user_id = r.user_id;
 
 ---
 
-## ♦ Step 3: Linear Search
-**Tools used**: Python
-
-```python
-def linear_search(arr, target):
-    for i in range(len(arr)):
-        if arr[i] == target:
-            return i
-    return -1
-
-ratings = [3, 5, 2, 4, 1]
-print("Target found at index:", linear_search(ratings, 4))
-```
-## Explanation
--Start at index 0.
--Compare each element with the target.
--If found, return the index.
--If not found, return -1.
-
----
-
-## ♦ Step 4: Binary Search
-**Tools used**: Python
-
-```python
-def binary_search(arr, target):
-    low, high = 0, len(arr) - 1
-    while low <= high:
-        mid = (low + high) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return -1
-
-ratings = sorted([3, 5, 2, 4, 1])
-print("Target found at index:", binary_search(ratings, 4))
-```
-## Explanation
--**Sort the list first.**
--**Check the middle element.**
--**If target is smaller, search left side.**
--**If target is larger, search right side.**
--**Repeat until found or exhausted.**
-
----
-
-## ♦ Step 5: Comparison
-Linear Search: Simple, works on unsorted lists, but slow (O(n)).
-
-Binary Search: Fast (O(log n)), but requires sorted data.
-
----
 
 ## 🔹 What Went Wrong (and How You Fixed It)
 
@@ -150,8 +93,6 @@ Binary Search: Fast (O(log n)), but requires sorted data.
 ---
 
 ## 🔹 Lessons Learned
-- SQL joins are powerful for combining multiple tables.  
-- Linear search is straightforward but inefficient for large datasets.  
-- Binary search is efficient but requires sorted data.  
+- SQL joins are powerful for combining multiple tables.   
 - Always check file paths and working directories in Jupyter.  
 - Avoid re‑creating tables if they already exist in PostgreSQL.  
