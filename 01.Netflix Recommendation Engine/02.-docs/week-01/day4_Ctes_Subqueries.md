@@ -7,7 +7,6 @@
 - Learn when to use **CTEs vs Subqueries**
 - Practice SQL patterns using the **Netflix dataset**
 - Understand when **Window Functions** are needed
-- Learn the **Two Pointer** DSA pattern
 - Solve **interview-style SQL problems**
 
 ---
@@ -293,42 +292,6 @@ ROW_NUMBER() OVER(...)
 
 ---
 ---
-
-## 🔗 Two Pointer Technique (DSA)
-## Problem
-
-We are given a sorted array and a target sum.  
-The task is to find a pair of numbers whose sum equals the target.
-
-### Dataset
-```python
-nums = [1, 2, 4, 6, 8, 10]
-target = 12
-```
-## Solution
-```python
-def pair_sum(nums, target):
-    left = 0
-    right = len(nums) - 1
-
-    while left < right:
-        current_sum = nums[left] + nums[right]
-
-        if current_sum == target:
-            return nums[left], nums[right]
-        elif current_sum < target:
-            left += 1
-        else:
-            right -= 1
-    return None
-```
-### Why Two Pointers?
-
-- Brute Force → O(n²)
-- Two Pointers → O(n)
-
----
----
 ## 🌳 Recursive CTEs
 A **Recursive CTE** references itself and is used for hierarchical data such as:
 - Employee → Manager relationships
@@ -399,9 +362,6 @@ Michael
 - **[Recursive CTEs](ca://s?q=Explain_recursive_CTEs)**  
   Handle hierarchical data like employee-manager structures or folder trees.  
 
-- **[Two Pointer Technique](ca://s?q=Explain_Two_Pointer_algorithm)**  
-  Optimizes pair-search problems in sorted arrays from O(n²) to O(n), making it a common interview pattern.  
-
 ---
 
 ### 🔑 Key Insights
@@ -410,7 +370,6 @@ Michael
 - **GROUP BY + HAVING** → Aggregate and filter groups.  
 - **Window Function** → Keep rows while adding calculations.  
 - **Recursive CTE** → Traverse hierarchies.  
-- **Two Pointers** → Efficient array search strategy.  
 
 ---
 
@@ -418,4 +377,4 @@ Michael
 Day 4 equips you with practical SQL and DSA tools that are frequently tested in interviews:
 - Analytics queries using **CTEs + Window Functions**.  
 - Problem-solving with **Subqueries** for comparisons.  
-- Optimized array search using **Two Pointers**.  
+
