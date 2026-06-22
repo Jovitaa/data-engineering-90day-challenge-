@@ -35,13 +35,16 @@ Key emphasis was placed on how Spark internally handles:
 Spark is scalable because it distributes data into **partitions** and processes those partitions in **parallel** across multiple executors.
 
 **Traditional Pandas processing:**
+```python
 Single Machine
 ↓
 Single CPU
 ↓
 Limited Memory
+```
 
 **Spark processing:**
+```python
 Driver
 ↓
 Multiple Executors
@@ -49,7 +52,7 @@ Multiple Executors
 Multiple Partitions
 ↓
 Parallel Processing
-
+```
 **Benefits:**
 - Distributed processing  
 - Parallel execution  
@@ -79,6 +82,7 @@ Executors perform actual computations.
 - Return results to Driver  
 
 **Architecture:**
+```python
 Driver
 |
 +------------+
@@ -86,7 +90,7 @@ Driver
 Executor1   Executor2
 |            |
 Part1       Part2
-
+```
 ---
 
 ### 2.3 [Partitioning](ca://s?q=Explain_Spark_Partition)
@@ -119,6 +123,7 @@ More partitions allow more concurrent tasks.
 Spark does not execute transformations immediately.  
 
 Instead, transformations are recorded until an **Action** is triggered:
+```python
 Transformation
 ↓
 Transformation
@@ -126,7 +131,7 @@ Transformation
 Transformation
 ↓
 Action
-
+```
 Spark builds a **Directed Acyclic Graph (DAG)** of operations and waits until an Action is called to execute the plan.
 
 **Benefits:**
