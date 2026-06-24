@@ -92,6 +92,7 @@ Silver
       ↓  
 Gold
 ```
+![Architecture](../../05.-architecture/adf_ingestion_architecture.png)
 
 ---
 
