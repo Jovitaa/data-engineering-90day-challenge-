@@ -92,7 +92,7 @@ Silver
       ↓  
 Gold
 ```
-
+![Architecture](../../05-architecture/images/adf_ingestion_architecture.png)
 ---
 
 ## 4. Storage Account Creation
