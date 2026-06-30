@@ -22,7 +22,7 @@ The challenge focuses on:
 - Gain hands-on experience with Azure services  
 - Develop scalable ETL pipelines  
 - Learn distributed data processing with PySpark  
-- Prepare for Data Engineer interviews  
+- Prepare for Data interviews 
 
 ---
 
