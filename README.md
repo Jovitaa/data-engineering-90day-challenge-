@@ -1,4 +1,4 @@
-# 🚀  Data Engineering Challenge
+# 🚀  Microsoft Data & AI Projects
 
 ## Overview
 
