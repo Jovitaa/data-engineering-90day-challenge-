@@ -1,7 +1,7 @@
 # 🚀  Data Engineering Challenge
 
 ## Overview
-This repository documents my 90-day journey toward becoming a **Data Engineer** by building real-world projects, strengthening SQL and Python foundations, learning modern data engineering tools, and developing system design skills.
+This repository documents my 90-day journey toward becoming a **Data & BI Engineer** by building real-world projects, strengthening SQL and Python foundations, learning modern data engineering tools, and developing system design skills.
 
 The challenge focuses on:
 - SQL & Database Engineering  
